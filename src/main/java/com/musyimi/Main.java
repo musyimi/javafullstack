@@ -12,9 +12,11 @@ public class Main {
 		SpringApplication.run(Main.class, args);
 	}
 	
-	@GetMapping("/")
-	public String hi() {
-		return "Hello";
+	@GetMapping("/habari")
+	public HiResponse hi() {
+		return new HiResponse("Hello");
 	}
+	
+	record HiResponse(String hi) {}
 
 }
